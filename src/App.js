@@ -7,7 +7,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import './App.css'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,
 })
 const openai = new OpenAIApi(configuration)
 
