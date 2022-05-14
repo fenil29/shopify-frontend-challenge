@@ -64,11 +64,6 @@ function App() {
     saveResponses([])
     setResponses([])
   }
-  function loadResponses() {
-    if (localStorage.getItem('responses')) {
-      setResponses(JSON.parse(localStorage.getItem('responses')))
-    }
-  }
   async function loadSupportedEngines() {
     const supportedEngines = await openai.listEngines()
 
