@@ -79,7 +79,7 @@ function App() {
   return (
     <div className="applicaion-container">
       <h1>Fun with AI</h1>
-      {supportedEngines.length !== 0 ? (
+      {supportedEngines.length === 0 ? (
         <div className="engine-loading-container">
           <ReactLoading
             type={'spin'}
