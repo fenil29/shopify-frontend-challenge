@@ -11,6 +11,7 @@ body {
 .applicaion-container {
   width: 80%;
   margin: auto;
+  max-width: 1000px;
 }
 .applicaion-container h1 {
   color: #004c3f;
