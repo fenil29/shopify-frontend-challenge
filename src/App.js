@@ -79,8 +79,15 @@ function App() {
   return (
     <div className="applicaion-container">
       <h1>Fun with AI</h1>
-      {supportedEngines.length === 0 ? (
-        <ReactLoading type={'spin'} color={'#004c3f'} height={20} width={20} />
+      {supportedEngines.length !== 0 ? (
+        <div className="engine-loading-container">
+          <ReactLoading
+            type={'spin'}
+            color={'#004c3f'}
+            height={20}
+            width={20}
+          />
+        </div>
       ) : (
         <select name="engine" id="engine" onChange={handleSelectEngine}>
           {supportedEngines.map((engine) => (
