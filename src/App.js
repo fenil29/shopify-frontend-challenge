@@ -33,7 +33,6 @@ function App() {
       const completion = await openai.createCompletion(selectedEngines, {
         prompt: textPrompt,
       })
-      console.log(completion.data.choices[0].text)
       let temp = [...responses]
       temp.unshift({
         prompt: textPrompt,
@@ -69,14 +68,12 @@ function App() {
       const supportedEngines = await openai.listEngines()
 
       setSupportedEngines(supportedEngines.data.data)
-      console.log(supportedEngines.data.data)
     } catch (error) {
       alert('Something Went Wrong!')
     }
   }
   function handleSelectEngine(e) {
     let { value } = e.target
-    console.log(value)
     setSelectedEngines(value)
   }
   return (
