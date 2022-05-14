@@ -7,7 +7,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import './App.css'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 })
 const openai = new OpenAIApi(configuration)
 
@@ -65,10 +65,14 @@ function App() {
     setResponses([])
   }
   async function loadSupportedEngines() {
-    const supportedEngines = await openai.listEngines()
+    try {
+      const supportedEngines = await openai.listEngines()
 
-    setSupportedEngines(supportedEngines.data.data)
-    console.log(supportedEngines.data.data)
+      setSupportedEngines(supportedEngines.data.data)
+      console.log(supportedEngines.data.data)
+    } catch (error) {
+      alert('Something Went Wrong!')
+    }
   }
   function handleSelectEngine(e) {
     let { value } = e.target
